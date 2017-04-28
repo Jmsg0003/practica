@@ -1,0 +1,35 @@
+<article>
+    <!--Con ng-model recupero la info del html para llevarla al js-->
+    <div <p>
+        <label for="playerName"> Nombre Jugador </label>
+        <input type="text"  ng-model="viewPlayer.playerName" id="playerName">
+        </p>
+        <p>
+            <label for="playerEMail"> Email </label>
+            <input type="text"  ng-model="viewPlayer.playerEmail" id="playerEmail">
+        </p>
+        <p>
+            <label> Elige un Avatar </label>
+            <form action="">
+                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="playerAvatar1">
+                <label for="playAvatar1">
+                    <img src="app\styles\avatar\avatar1.jpg">
+                </label>
+                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="playerAvatar2"> 
+                <label for="playAvatar2">
+                    <img src="app\styles\avatar\avatar2.jpg">
+                </label>
+                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="playerAvatar3">
+                <label for="playAvatar3">
+                    <img src="app\styles\avatar\avatar3.jpg">
+                </label>
+                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="playerAvatar4">
+                <label for="playAvatar4">
+                    <img src="app\styles\avatar\avatar4.jpg">
+                </label>
+            </form>
+        </p>
+        <div class="center">
+            <button class="btn" ng-click="viewPlayer.starGame()"> Iniciar Juego </button>
+        </div>
+</article>
