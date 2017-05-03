@@ -23,6 +23,10 @@
       { "name": "carta5", "img": "card5.jpg" }
     ];
 
+    module.userGame = [
+      {"name":"","email":"","avatar":""}
+    ];
+
     module.getAllCard = function () {
       self.allCard = self.allCard.concat(self.allCard.slice());
 
@@ -33,6 +37,20 @@
       return self.allCard;
     };
 
+    module.getNameCard = function (card) {
+          return card.name;
+    };
+    
+    module.insertUserGame = function(userGame){
+      self.userGame.name=userGame.name;
+      self.userGame.email=userGame.email;
+      self.userGame.avatar=userGame.avatar;
+    };
+
+    module.getUserGame = function (){
+      return self.userGame;
+    };
+    
     return module;
   };
 
