@@ -19,14 +19,6 @@
       template: '<view-main></view-main>'
     };
 
-    /*    var detail = {
-          name: 'detail',
-          url: '/detail/:idAnimal',
-          params: {
-            idAnimal: { squash: true, value: null }
-          },
-          template: '<view-detail></view-detail>'
-        };*/
     var detail = {
       name: 'detail',
       url: '/detail/',
@@ -37,7 +29,7 @@
     var about = {
       name: 'aboutUs',
       url: '/aboutUs',
-      template: '<h3 class="AboutUs">About Us: Meet me</h3>'
+      template: ''
     };
 /*
     var add = {
@@ -60,8 +52,8 @@
 
     var win = {
       name: 'win',
-      url: '/win/',
-      template: '<h3>Has Ganado <h3>'
+      url: '/win',
+      template: '<h1 class="win"> ¡¡Has Ganado!! <h1>'
     }
     /*  
         var edit = {
@@ -76,6 +68,7 @@
     $stateProvider.state(about);
     $stateProvider.state(player);
     $stateProvider.state(start);
+    $stateProvider.state(win);
 
     /* Definimos una ruta por defecto: */
     $urlRouterProvider.otherwise('/main');
