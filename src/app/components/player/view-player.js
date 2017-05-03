@@ -1,7 +1,7 @@
 (function(angular) {
 
   angular.module('app').component('viewPlayer', {
-    templateUrl:  'app/components/player/view-player-template.html',
+    templateUrl:  'app/components/main/player/view-player-template.html',
     controller: ['$state','cardsFactory', viewPlayer],
     controllerAs: 'viewPlayer',
     bindings: {
@@ -25,6 +25,9 @@
       vm.userPlayer();
       $state.go('start');
     }
+    vm.endGame = function(){
+      $state.go("main");
+    }
     
     /*Vamos a coger los datos del usuario*/
      vm.userPlayer = function() {
@@ -33,7 +36,8 @@
          email: vm.playerEmail,
          avatar: vm.playerAvatar
        };
-       vm.showPlayer(userPlayer);
+       console.log(userPlayer);
+       cardsFactory.insertUserGame(userPlayer);
     };
 
    /* Muestro el usuario*/

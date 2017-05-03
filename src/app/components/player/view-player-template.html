@@ -1,35 +1,39 @@
 <article>
     <!--Con ng-model recupero la info del html para llevarla al js-->
-    <div <p>
-        <label for="playerName"> Nombre Jugador </label>
-        <input type="text"  ng-model="viewPlayer.playerName" id="playerName">
-        </p>
-        <p>
-            <label for="playerEMail"> Email </label>
+    <div class="btn-center">
+        <div class="box-center2">
+             <label for="playerName"> Nick : </label>
+             <input type="text"  ng-model="viewPlayer.playerName" id="playerName">
+        </div>
+        <div class="box-center2">
+            <label for="playerEMail"> Email : </label>
             <input type="text"  ng-model="viewPlayer.playerEmail" id="playerEmail">
-        </p>
-        <p>
-            <label> Elige un Avatar </label>
-            <form action="">
-                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="playerAvatar1">
-                <label for="playAvatar1">
-                    <img src="app\styles\avatar\avatar1.jpg">
+        </div>
+        <div class="box-center2">
+            <p> Elige tú Avatar </p>
+            <div>
+            <form action="" >
+                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="avatar1">
+                <label for="avatar1">
+                    <img class="avatarSize" src="app\styles\avatar\avatar1.jpg">
                 </label>
-                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="playerAvatar2"> 
-                <label for="playAvatar2">
-                    <img src="app\styles\avatar\avatar2.jpg">
+                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="avatar2"> 
+                <label for="avatar2">
+                    <img class="avatarSize" src="app\styles\avatar\avatar2.jpg">
                 </label>
-                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="playerAvatar3">
-                <label for="playAvatar3">
-                    <img src="app\styles\avatar\avatar3.jpg">
+                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="avatar3">
+                <label for="avatar3">
+                    <img class="avatarSize" src="app\styles\avatar\avatar3.jpg">
                 </label>
-                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="playerAvatar4">
-                <label for="playAvatar4">
-                    <img src="app\styles\avatar\avatar4.jpg">
+                <input type="radio" ng-model="viewPlayer.playerAvatar" name="playerAvatar" value="avatar4">
+                <label for="avatar4">
+                    <img class="avatarSize" src="app\styles\avatar\avatar4.jpg">
                 </label>
             </form>
-        </p>
-        <div class="center">
-            <button class="btn" ng-click="viewPlayer.starGame()"> Iniciar Juego </button>
+            </div>
+        </div>
+        <div class="btn-center">
+            <button class="btn" ng-click="viewPlayer.starGame()"> Iniciar </button>
+            <button class="btn" ng-click="viewPlayer.endGame()"> Salir </button>
         </div>
 </article>
