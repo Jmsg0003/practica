@@ -10,7 +10,7 @@
     var vm = this;
 
     vm.goToAbout = function() {
-      $state.go('aboutUs');
+      $state.go('main');
     };
   }
 
