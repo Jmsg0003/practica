@@ -1,54 +1,96 @@
+html{
+	width:100%; 
+	height:100%;
+/*	background-image: url("../styles/fondo1.jpg");
+*/	background-color: dimgrey;
+	background-size: 100% 100%;
+}
+body{
+	width:100%;
+}
+
 .main-container {
-    max-width: 600px;
-    border: 1px solid green;
-    padding: 1em;
+    max-width: 100%;
+	padding: 1em;
 }
-
 .view-main {
-    border: 1px solid #cc00cc;
+/*    border: 1px solid #cc00cc;
+*/    padding: 1em;
+}
+
+#main-header {
+	font-family: georgia, serif;
+    color: #080808;
+    /* background-color: #E0BFBF; */
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 6.6pt;
+    word-spacing: -6.6pt;
+    line-height: 1.2;
     padding: 1em;
 }
 
-.main-header {
-    font-size:24px;
+#main-footer {
     text-align: center;
-    border: 1px solid red;
-}
-
-.main-footer {
-    text-align: center;
-    border: 3px solid blue;
     margin: 0.5em;
     padding:0.2em;
-}
-.AboutUs {
-    border: 3px solid cadetblue;
+	  border-top: 3px solid darkgrey;
 }
 
-.list-animals {
-  padding:0.2em;
-  border: 1px solid #ff9933;
-}
 
 .list-card {
-    width: 100px;
-    height: 200px;
-    border: 1px solid #ccc;
     display: inline-block;
-    margin: 0.5em;
-    padding:0.2em;
-    overflow:hidden;
     text-align: center;
     cursor: pointer;
+	  justify-content:center
 }
 
 #show-card {
     width:100px;
     height: 200px;
+
 }
-.center{
-    padding: 1em 3em;
-    margin: 1em 25%;
+.win {
+  text-align: center;
+	font-family: Georgia;
+	font-size: 60px;
+  color: yellow;
+}
+.avatarSize{
+	width:80px;
+    height: 80px;
+}
+#show-card1 {
+    width:50px;
+    height: 50px;
+}
+.card-center {
+  display: block;
+  margin: 5% 25%;
+}
+.pos-right{
+	text-align: right;
+	font-family: Georgia;
+	font-size: 20px;
+	margin: 0px 50px;
+}
+.box-center {
+  background-color: pink;
+  padding: 10px;
+  margin: 10px;
+  /* IMPORTANTE */
+  display: inline-block;
+}
+
+.box-center2 {
+  display: block;
+  margin: .5em 0 0 0;
+}
+
+.btn-center{
+	text-align:center;
 }
 /*decoracion de botones*/
 .btn {
@@ -78,129 +120,107 @@
   text-decoration: none;
 }
 
-/*rotar carta css*/
-.rotateMe {
- -webkit-transition: -webkit-transform 1s ease-out;
- -moz-transition: -moz-transform 1s ease-out;
- transition: transform 1s ease-out;
+/*FOOTER*/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+.body-footer {
+  padding: 3em 2em;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1;
+  background: #333333;
 }
-.rotateMe:hover {
- -webkit-transform: rotate(360deg);
- -moz-transform: rotate(360deg);
- transform: rotate(360deg);
+.credit {
+  display: block;
+  max-width: 400px;
+  text-align: center;
+  padding: 0;
+  font-size: 0.8em;
+  color: #888888;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
 }
-
-.flip-container {
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -o-perspective: 1000;
-  perspective: 1000;
-
-	border: 1px solid #ccc;
+.credit p a,
+.credit a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
 }
-
-	.flip-container:hover .flipper,  
-  .flip-container.hover .flipper {
-		-webkit-transform: rotateY(180deg);
-		-moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-		transform: rotateY(180deg);
-	}
-
-.flip-container, .front, .back {
-	width: 320px;
-	height: 427px;
+.credit p a:hover,
+.credit a:hover,
+.credit p a:active,
+.credit a:active {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+  color: white;
 }
-
-.flipper {
-	-webkit-transition: 0.6s;
-	-webkit-transform-style: preserve-3d;
-
-	-moz-transition: 0.6s;
-	-moz-transform-style: preserve-3d;
-  
-  -o-transition: 0.6s;
-	-o-transform-style: preserve-3d;
-
-	transition: 0.6s;
-	transform-style: preserve-3d;
-
-	position: relative;
+.credit p a.button,
+.credit a.button {
+  padding: 6px 12px;
+  margin-top: 10px;
+  background: #1a1a1a;
+  border-radius: 3px;
 }
-
-.front, .back {
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-	backface-visibility: hidden;
-
-	position: absolute;
-	top: 0;
-	left: 0;
+.credit p a.button:hover,
+.credit a.button:hover {
+  background: #4d4d4d;
+}
+.credit p:last-of-type {
+  margin-bottom: 30px;
+}
+section {
+  max-width: 175px;
+  margin: 0 auto;
+  display: block;
+  padding: 2em;
+  width: 100%;
 }
 
-.front {
-/*	background: url(C:/Users/formacion/taller-angular/src/app/styles/imgs/reverse.jpg) 0 0 no-repeat;
-*/	z-index: 2;
+/*animation*/
+.dtl22 {
+    width: 100%;
+    position: relative;
+   /* -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);*/
 }
-
-.back {
-	-webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-	transform: rotateY(180deg);
-
-	background: #f8f8f8;
+.dtl22 img {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    transition: all 0.1s;
 }
-
-.front .name {
-	font-size: 2em;
-	display: inline-block;
-	background: rgba(33, 33, 33, 0.9);
-	color: #f8f8f8;
-	font-family: Courier;
-	padding: 5px 10px;
-	border-radius: 5px;
-	bottom: 60px;
-	left: 25%;
-	position: absolute;
-	text-shadow: 0.1em 0.1em 0.05em #333;
-
-	-webkit-transform: rotate(-20deg);
-	-moz-transform: rotate(-20deg);
-  -o-transform: rotate(-20deg);
-	transform: rotate(-20deg);
+.dtl22 .dtl {
+   /* background: #333;*/
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    padding: 0 15px;
+    -webkit-transform: perspective(600px) rotateX(-90deg);
+    -moz-transform: perspective(600px) rotateX(-90deg);
+    -ms-transform: perspective(600px) rotateX(-90deg);
+    -o-transform: perspective(600px) rotateX(-90deg);
+    transform: perspective(600px) rotateX(-90deg);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
-
-.back-logo {
-	position: absolute;
-	top: 40px;
-	left: 90px;
-	width: 160px;
-	height: 117px;
-	background: url(C:/Users/formacion/taller-angular/src/app/styles/imgs/card1.jpg) 0 0 no-repeat;
-}
-
-.back-title {
-	font-weight: bold;
-	color: #00304a;
-	position: absolute;
-	top: 180px;
-	left: 0;
-	right: 0;
-	text-align: center;
-	text-shadow: 0.1em 0.1em 0.05em #acd7e5;
-	font-family: Courier;
-	font-size: 2em;
-}
-
-.back p {
-	position: absolute;
-	bottom: 40px;
-	left: 0;
-	right: 0;
-	text-align: center;
-	padding: 0 20px;
-  font-family: arial;
-  line-height: 2em;
+/*
+.dtl22 .dtl a:active {
+    background: #e6e6e6;
+    border: 1px solid #adadad;
+}*/
+.dtl22:active .dtl {
+    visibility: visible;
+    -webkit-transform: perspective(600px) rotateX(0deg);
+    -moz-transform: perspective(600px) rotateX(0deg);
+    -ms-transform: perspective(600px) rotateX(0deg);
+    -o-transform: perspective(600px) rotateX(0deg);
+    transform: perspective(600px) rotateX(0deg);
 }
