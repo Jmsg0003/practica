@@ -1,5 +1,13 @@
-<div  class="list-card">
-    <!-- Con la directiva ng-src podemos definir la ruta de las imágenes de forma dinámica
-      <img id="show-card" class="rotateMe" ng-src="app/styles/imgs/{{cardPlay.itemCard.img}}"> -->
-    <img id="show-card" ng-src="app/styles/imgs/{{cardPlay.itemCard.img}}">
+<div class="list-card">
+  <!-- Con la directiva ng-src podemos definir la ruta de las imágenes de forma dinámica
+  <img id="show-card" ng-src="app/styles/imgs/{{cardPlay.itemCard.img}}">
+  <img id="show-card" src="app/styles/imgs/reverse.jpg" onclickover="this.src='app/styles/imgs/{{cardPlay.itemCard.img}}'"
+    onclickout="this.src='app/styles/imgs/reverse.jpg'" />-->
+
+  <div id="show-card" class="dtl22">
+    <img src="app/styles/imgs/reverse.jpg" alt="">
+    <div class="dtl">
+      <img src="app/styles/imgs/{{cardPlay.itemCard.img}}" alt="">
+    </div>
+  </div>
 </div>
