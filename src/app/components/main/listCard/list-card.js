@@ -9,19 +9,26 @@
   /* Inyectamos aquí y arriba $state */
   function listCard($state, cardsFactory) {
     var vm = this;
-    var rotate = false; // variable que controla si esta girada (true) o no (false)
-    var cont_fail = 0; // contador de fallos
-    var cont_success = 0; // contador de fallos
+    vm.rotateCard1 = false; // variable que controla si esta girada (true) o no (false)
+    vm.rotateCard2 = false; // variable que controla si esta girada (true) o no (false)
+    vm.cont_fail = 0; // contador de fallos
+    vm.cont_success = 0; // contador de fallos
     vm.card1 = '';
     vm.card2 = '';
     vm.long_card = 0;
 
     vm.$onInit = function () {
-
+      vm.cont_fail = 0;
+      vm.cont_success = 0;
       vm.allCardsRandom = cardsFactory.getAllCard(); //tengo lista con duplicados*/
+      vm.userGame = cardsFactory.getUserGame();
+      //  console.log(vm.userGame);
       vm.long_card = vm.allCardsRandom.length;
     };
 
+    vm.endGame = function () {
+      $state.go("main");
+    };
     /* Al clicar sobre un elemento de la lista,
     nos vamos al detalle con el método go de $state */
     vm.goToDetail = function () {
@@ -30,41 +37,42 @@
 
     vm.removeCard = function (card) {
 
-      var i = vm.long_card;
-      while (i--) {
-        console.log(card.name);
-        console.log(vm.allCardsRandom[i].name);
-        // debugger;
-        if (card.name === vm.allCardsRandom[i].name) {
-          console.log("carta que tengo que borrar",card);
+      var i = vm.long_card - 1;
+      var nameCardA = "";
+
+      while (i >= 0) {
+        nameCardA = cardsFactory.getNameCard(vm.allCardsRandom[i]);
+        if (card.name === nameCardA) {
           vm.allCardsRandom.splice(i, 1);
-          console.log("borro la carta");
           vm.long_card--;
         }
-        i++;
+        i--;
       }
     };
 
     vm.selectCard = function (item) {
-      if (vm.long_card != 0) { // tengo cartas
-        if (!vm.card1) {
+
+      if (vm.long_card != 0) { // tengo cartas??
+        if (!vm.card1) { // si no hay alguna carta en card1
           vm.card1 = item;
-        } else {
+          vm.rotateCard1 = true;
+        } else { // hay carta1 y elijo la 2
           vm.card2 = item;
+          vm.rotateCard2 = true;
           if (vm.card1.name === vm.card2.name) {
             vm.removeCard(vm.card1);
-            cont_success ++;
+            vm.cont_success++;
+          } else {
+            vm.cont_fail++;
           }
-          else {
-           cont_fail ++;
-           console.log("cartas elegidas no son iguales");
-          }
-          vm.card1 = '';
-          vm.card2 = '';
-        };
-      }else{
-         console.log("no hay mas cartas");
-         $state.go('win');
+          vm.rotateCard1 = false;
+          vm.rotateCard2 = false;
+          vm.card1 = "";
+          vm.card2 = "";
+        }
+      } 
+      if (vm.long_card===0){
+        $state.go('win');
       }
     };
 

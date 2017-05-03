@@ -1,5 +1,22 @@
 <article>
-    <card-play ng-click= "listCard.selectCard(item)" ng-repeat="item in listCard.allCardsRandom track by $index" item-card='item'>
-
-    </card-play> 
+    <div class="pos-right">
+        <div>
+            {{listCard.userGame.name}}
+            <img id="show-card1" ng-src="app/styles/avatar/{{listCard.userGame.avatar}}.jpg">
+        </div>
+        <div>
+            <button ng-click="listCard.endGame()"> Salir </button>     
+        </div>
+    </div>
+    <div class="btn-center">
+        <div class= "box-center">Aciertos: {{listCard.cont_success}} </div> 
+        <div class= "box-center"> Fallos: {{listCard.cont_fail}} </div>
+    </div>
+    <div class="card-center">
+        <card-play 
+            ng-click= "listCard.selectCard(item)"
+            ng-repeat="item in listCard.allCardsRandom track by $index" 
+            item-card='item'>
+        </card-play> 
+    </div>
 </article>
